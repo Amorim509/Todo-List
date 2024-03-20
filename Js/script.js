@@ -4,7 +4,8 @@ const todoinput = document.querySelector('#todo-input');
 const editForm = document.querySelector('#edit-form');
 const editInput = document.querySelector('#edit-input');
 const todoList = document.querySelector('#todo-list');
-const cancelEditBtn= document.querySelector('#cancel-edit-btn');
+const cancelEditBtn = document.querySelector('#cancel-edit-btn');
+const search = document.querySelector('#search-input');
 
 let oldInputValue;
 
@@ -117,3 +118,19 @@ editForm.addEventListener("submit", (e) => {
 
     toggleForms();
 })
+
+
+search.addEventListener('input', function() {
+    var searchValue = this.value.toLowerCase();
+    var listItems = document.querySelectorAll('.todo');
+  
+    listItems.forEach(function(item) {
+      var text = item.textContent.toLowerCase();
+      if (text.includes(searchValue)) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+  
