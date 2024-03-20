@@ -1,0 +1,159 @@
+/* Geral */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: helvetica;
+    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../Img/image3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat-x;
+}
+
+button {
+    background-color: whitesmoke;
+    color: #4f7537;
+    border: solid 1px #4f7537;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: #4f7537;
+    color: white;
+}
+
+button:hover > i {
+    color: white;
+}
+
+button > i {
+    color: #4f7537;
+    font-weight: bold;
+    pointer-events: none
+}
+
+input, select {
+    padding: 0.25rem 0.5rem;
+}
+
+.hide {
+    display: none;
+}
+
+/* Header */
+
+.todo-container {
+    max-width: 450px;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: solid 1px #b4b4b4;
+}
+
+/*Todo form */
+
+#todo-form, #edit-form {
+    padding: 1rem;
+    border-bottom: solid 1px #b4b4b4;
+}
+
+#todo-form p, #edit-form p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#cancel-edit-btn {
+    margin-top: 1rem;
+}
+
+.form-control, .form-edit {
+    display: flex;
+}
+
+input {
+    margin-right: 0.5rem;
+}
+
+/* Toolbar */
+
+#toolbar {
+    display: flex;
+    margin-bottom: 0.5rem;
+    border-bottom: solid 1px #b4b4b4;
+    padding: 1rem;
+}
+
+#filter, #search {
+    margin-right: 1rem;
+}
+
+#filter h4, #search h4 {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#search form {
+    display: flex;
+    margin-right: 0.5rem;
+}
+
+#search {
+    width: 65%;
+    border-right: #b4b4b4 solid 1px;
+}
+
+#filter {
+    padding-right: 1rem;
+    width: 35%;
+}
+
+#filter select {
+    flex: 1;
+}
+
+/* Todo */
+
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: #b4b4b4 solid 1px;
+    transition: 0.3s;
+}
+
+.todo h3 {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.todo button {
+    margin-left: 1rem;
+}
+
+.done {
+    background-color: #4f7537;
+}
+
+.done h3 {
+    color: white;
+    text-decoration: line-through;
+    font-style: italic;
+}
