@@ -6,6 +6,7 @@ const editInput = document.querySelector('#edit-input');
 const todoList = document.querySelector('#todo-list');
 const cancelEditBtn = document.querySelector('#cancel-edit-btn');
 const search = document.querySelector('#search-input');
+const filter = document.querySelector('#filter-select');
 
 let oldInputValue;
 
@@ -58,6 +59,12 @@ const updateTodo = (text) => {
             todoTitle.innerText = text;
         }
     })
+}
+
+
+function filterTodo() {
+    var filterValue = filter.value;
+    console.log(filterValue);
 }
 
 //Eventos
@@ -133,4 +140,32 @@ search.addEventListener('input', function() {
       }
     });
   });
-  
+
+
+filter.addEventListener('change', function() {
+    var filterValue = filter.value;
+    var listItems = document.querySelectorAll('.todo')
+    
+    if (filterValue == 'done') {
+        listItems.forEach(function(item) {
+            if (item.classList.contains("done")) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        })
+    } else if (filterValue == 'todo') {
+        listItems.forEach(function(item) {
+            if (item.classList.contains("done")) {
+                item.style.display = 'none';
+            } else {
+                item.style.display = 'flex';
+            }
+        })
+    } else if (filterValue == 'all') {
+        listItems.forEach(function(item) {
+            item.style.display = 'flex';
+        })
+    }
+});
+    
